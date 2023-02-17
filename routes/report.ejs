@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid mt-4">
+        <div class="row p-3">
+            <div class="col-md-12">
+                <h3 class="text-center">Cafe Management System</h3>
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Name : <%=name%></th>
+                        <th>Email : <%=email%></th>
+                    </tr>
+                    <tr>
+                        <th>Contact Number : <%=contactNumber%></th>
+                        <th>Payment Method : <%=paymentMethod%></th>
+                    </tr>
+                </table>
+
+                <h3 class="mt-3">Product Details</h3>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Sub Total</th>
+                    </tr>
+                    <% if(productDetails.length>0){ %>
+                        <% productDetails.forEach(product => { %>
+                            <tr>
+                                <td><%=product.name%></td>
+                                <td><%=product.category%></td>
+                                <td><%=product.quantity%></td>
+                                <td><%=product.price%></td>
+                                <td><%=product.total%></td>
+                            </tr>
+                            <%});%>
+                            <%}%>
+                </table>
+                <h3>Total : <%=totalAmount%></h3>
+                <h3>Thank You for Visiting. Please Visit Again!</h3>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
